@@ -1,0 +1,4 @@
+#!/bin/sh
+# never allow anything! We want this key to only be able to forward our single
+# port
+exit 1

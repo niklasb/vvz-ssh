@@ -1,0 +1,1 @@
+permitopen="kim-cm-bts01.scc.kit.edu:80",command="~/.ssh/validate-command ~/.ssh/validate-vvz" ssh-rsa [RSA PUBKEY] user@host

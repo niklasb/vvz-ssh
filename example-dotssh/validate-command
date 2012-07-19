@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# generic script that can be used as a SSH shell with another
+# script as its argument. The script given as the argument should
+# take the requested SSH command on the command line and should return
+# an exit code of zero if the command should be allowed and non-zero
+# otherwise.
+
+echo >&2 "[validate-command] Command: $SSH_ORIGINAL_COMMAND"
+
+if [ ! -z "$1" ]; then
+  if ! "$1" "$SSH_ORIGINAL_COMMAND"; then
+    echo >&2 "[validate-command] Rejected"
+    exit 1
+  else
+    echo >&2 "[validate-command] Accepted"
+  fi
+fi
+
+eval "exec $SSH_ORIGINAL_COMMAND"
