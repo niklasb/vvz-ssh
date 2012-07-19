@@ -2,9 +2,14 @@
 
 require 'net/ssh'
 
+# the SSH private key file
 keyfile = File.expand_path("~/.ssh/id_rsa_vvz")
+# an ATIS shell boxs
 host = 'i08fs1.ira.uka.de'
+# my ATIS account name
 user = 's_baumst'
+
+# our local port forward
 local_forwards = {
   8765 => ['kim-cm-bts01.scc.kit.edu', 80],
 }
